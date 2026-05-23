@@ -97,9 +97,15 @@ export default function Home() {
   };
 
   const handleNewEdit = () => {
+    if (imagePreview) URL.revokeObjectURL(imagePreview);
+    setImage(null);
+    setImagePreview(null);
     setResultImage(null);
     setSelectedHistoryId(null);
     setPrompt("");
+    setError(null);
+    setHistory([]);
+    setPromptHistory([]);
   };
 
   return (
